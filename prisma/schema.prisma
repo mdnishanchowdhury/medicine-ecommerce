@@ -45,6 +45,8 @@ model Medicine {
   updatedAt  DateTime    @updatedAt
   orderItems OrderItem[]
   reviews    Review[]
+
+  @@index([categoryId])
 }
 
 // Order Table
@@ -59,6 +61,8 @@ model Order {
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
   orderItems      OrderItem[]
+
+  @@index([customerId])
 }
 
 // OrderItem Table
@@ -88,6 +92,8 @@ model Review {
   comment    String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+
+  @@index([medicineId])
 }
 
 // Order enum
