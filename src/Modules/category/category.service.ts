@@ -22,8 +22,35 @@ const getAllCategories = async () => {
     });
 };
 
+// Get Category ById
+const getCategoryById = async (id: string) => {
+    return prisma.category.findUnique({
+        where: { id },
+    });
+};
+
+// Update Category
+const updateCategory = async (
+    id: string,
+    data: { categoryName?: string; description?: string }
+) => {
+    return prisma.category.update({
+        where: { id },
+        data,
+    });
+};
+
+// Delete Category
+const deleteCategory = async (id: string) => {
+    return prisma.category.delete({
+        where: { id },
+    });
+};
 
 export const categoryService = {
     createCategory,
-    getAllCategories
+    getAllCategories,
+    getCategoryById,
+    updateCategory,
+    deleteCategory
 }
