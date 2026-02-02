@@ -133,7 +133,6 @@ const updateOrderStatus = async (req: Request, res: Response) => {
                 message: "Only a seller can update the order status",
             });
         }
-
         const result = await ordersService.updateOrderStatus(
             id as string,
             req.user.id,
