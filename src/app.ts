@@ -7,6 +7,8 @@ import { medicineRouter } from "./Modules/medicine/medicine.route";
 import { orderRouter } from "./Modules/order/order.route";
 import { notFount } from "./middlewares/notFount";
 import errorHandler from "./middlewares/globalErrorHandler";
+import { reviewRouter } from "./Modules/review/review.route";
+import { userRoutes } from "./Modules/users/user.routes";
 
 const app = express();
 
@@ -24,6 +26,8 @@ app.use("/category", categoryRouter);
 app.use("/api", medicineRouter);
 
 app.use("/api", orderRouter);
+app.use("/api", reviewRouter);
+app.use("/api", userRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello Word!");
