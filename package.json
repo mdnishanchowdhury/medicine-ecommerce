@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "prisma generate && npx tsup src/server.ts --format esm --target node20 --outDir dist",
-    "start": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tsx watch src/server.ts"
   },
   "keywords": [],
