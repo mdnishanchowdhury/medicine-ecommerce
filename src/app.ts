@@ -1,19 +1,19 @@
 import express from "express";
-import { categoryRouter } from "./Modules/category/category.route";
+import { categoryRouter } from "./modules/category/category.route";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
 import cors from 'cors';
-import { medicineRouter } from "./Modules/medicine/medicine.route";
-import { orderRouter } from "./Modules/order/order.route";
+import { medicineRouter } from "./modules/medicine/medicine.route";
+import { orderRouter } from "./modules/order/order.route";
 import { notFount } from "./middlewares/notFount";
 import errorHandler from "./middlewares/globalErrorHandler";
-import { reviewRouter } from "./Modules/review/review.route";
-import { userRoutes } from "./Modules/users/user.routes";
+import { reviewRouter } from "./modules/review/review.route";
+import { userRoutes } from "./modules/users/user.routes";
 
 const app = express();
 
 app.use(cors({
-    origin: process.env.APP_URL || "http://localhost:3000",
+    origin: process.env.APP_URL,
     credentials: true
 }))
 
